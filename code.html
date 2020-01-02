@@ -3,69 +3,38 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>My First Function</title>
+  <title>Gandalf The Grey Objects</title>
 </head>
 
 <body>
-
-  <h1>Open the console to see the magic!</h1>
-
-  <script>
-    // FUNCTIONS
-    // ================================================================================
-    // Create a Function called "adder" that take three arguments (x, y, z).
-    function adder(x, y, z) {
-      console.log(x + y + z);
+  <script type="text/javascript">
+    var gandalf = {
+      "real name": "Gandalf",
+      "age (est)": 11000,
+      "race": "Maia",
+      "haveRetirementPlan": true,
+      "aliases": [
+        "Greyhame",
+        "Stormcrow",
+        "Mithrandir",
+        "Gandalf the Grey",
+        "Gandalf the White"
+      ]
+    };
+    // Object properties can be accessed with "bracket notation"
+    alert("My name is " + gandalf["real name"]);
+    // Or with "dot notation" if the property has no spaces
+    if (gandalf.haveRetirementPlan) {
+      // Or with a variable that matches the name of the property
+      var ageProperty = "age (est)";
+      var years = gandalf[ageProperty];
+      alert("My 401k has been gathering interest for " + years + " years!");
     }
-    // The function should add the arguments together, and log the result to the console.
-    // Create a Function called "multiplier" that takes three arguments (x, y, z).
-    // The function should multiply the arguments, and log the result to the console.
-    function multiplier(x, y, z) {
-      console.log(x * y * z);
-    }
-    // Create a Function called "isString" that takes three arguments (x, y, z).
-    // "isString" determines if all three arguments are strings and logs an appropriate response to the console.
-    function isString(x, y, z) {
-      if (typeof x === "string" && typeof y === "string" && typeof z === "string") {
-        console.log("Right! They are all string");
-      } else {
-        console.log("Nah.... They are not String");
-      }
-    }
-    // Create a Function called "vowelChecker" that takes in a single argument (x).
-    // "vowlChecker" logs whether or not the input is a vowel.
-    function vowelChecker(x) {
-      var checkChar = x.toLowerCase().charAt(0);
-      if (checkChar === "a" || checkChar === "e" || checkChar === "i" || checkChar === "o" || checkChar === "u") {
-        console.log("its a vowel")
-      } else {
-        console.log("not a Vowel");
-      }
-    }
-    // BONUS
-    // Creates a version of "adder" that returns its result. Function is called "adderReturn".
-    // Creates a version of "multiplier" that returns its result. Function is called "multiplierReturn".
-    // FUNCTION EXECUTION
-    // ================================================================================
-    // Add in the lines of code below necessary to call the functions we created above.
-    // Call the adder function here.
-    adder(1, 2, 3);
-    console.log("-------------------");
-    // Call the multiplier function here.
-    multiplier(1, 2, 3);
-    console.log("-------------------");
-    // Call the isString function here.
-    isString("Ram", "Nam", "Aam");
-    console.log("-------------------");
-    // Call the vowelChecker function here.
-    vowelChecker("apple", "enk", "banana", "grape");
-    console.log("-------------------");
-    // BONUS
-    // Call the adderReturn function here and set it equal to a variable. Then log that variable to the console.
-    console.log("-------------------");
-      // Call the multiplierReturn function here and set it equal to a variable. Then log that variable to the console.
+    // You can access arrays and their properties from an object
+    alert("I have more than " + gandalf.aliases.length + " aliases");
+    // Non-existent properties return undefined
+    alert("My designation is " + gandalf["designation"]);
   </script>
-
 </body>
 
 </html>
