@@ -3,12 +3,18 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>My First Object</title>
+  <title>Car Adventures!</title>
 </head>
 
 <body>
 
+  <h1>Car Adventures!</h1>
+  <h2>Type "h" to honk, "d" to drive to work, "w" to drive around the world, or "t" to get a tuneup.</h2>
+  <h2>See console for car stats.</h2>
+
   <script>
+    // VARIABLES
+    // ==========================================================================
     var car = {
       make: "Honda",
       model: "Fit",
@@ -35,21 +41,44 @@
         alert("Honk! Honk!");
       }
     };
-    // How would we log...
-    // The car's make?
-    alert(car.make);
-
-    // The car's model?
-    alert(car.model);
-    // The car's mileage?
-    alert(car.mileage);
-    // How would we run the car's driveToWork method?
-    car.driveToWork();
-    // How would we run the car's driveAroundWorld method?
-    car.driveAroundWorld();
-    // How would we run the getTuneUp method?
-    car.getTuneUp();
-    car.honk();
+    // FUNCTIONS
+    // ==============================================================================
+    // Logs all of our car's current stats to the console.
+    function reWriteStats() {
+      console.log("Make: " + car.make);
+      console.log("Model: " + car.model);
+      console.log("Color:" + car.color);
+      console.log("Mileage: " + car.mileage);
+      console.log("Is Working: " + car.isWorking);
+      console.log("------------------------------");
+    }
+    // MAIN PROCESS
+    // ==============================================================================
+    // Captures keyboard input. Depending on the letter pressed it will "call" (execute) different functions.
+    document.onkeyup = function (event) {
+      // Captures the key press, converts it to lowercase, and saves it to a variable.
+      var letter = event.key.toLowerCase();
+      // If the letter is h, run the following functions/methods.
+      if (letter === "h") {
+        car.honk();
+        reWriteStats();
+      }
+      // If the letter is d, run the following functions/methods.
+      if (letter === "d") {
+        car.driveToWork();
+        reWriteStats();
+      }
+      // If the letter is w, run the following functions/methods.
+      if (letter === "w") {
+        car.driveAroundWorld();
+        reWriteStats();
+      }
+      // If the letter is t, run the following functions/methods.
+      if (letter === "t") {
+        car.getTuneUp();
+        reWriteStats();
+      }
+    };
   </script>
 
 </body>
