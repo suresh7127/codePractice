@@ -3,58 +3,52 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Trigger Clicked</title>
+  <title>Trigger Random</title>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Added link to the jQuery Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 </head>
 
 <body>
 
-  <h1>Click to Eat Sandwich</h1>
-  <h3 id="pbj">Peanut Butter Jelly</h3>
-  <h3 id="grilledcheese">Grilled Cheese</h3>
-  <h3 id="roastbeef">Roast Beef</h3>
+  <div class="jumbotron">
 
-  <div id="image-div"></div>
+    <h1 class="text-center">Generate a Random Number!</h1>
+
+    <div class="text-center">
+
+      <!-- Here we have our button for generating random numbers (#random-button) -->
+      <button id="random-button" class="btn btn-primary btn-lg">
+        <h1><span class="fa fa-question"></span></h1>
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- Here we have div called "random-number" where our random number will go -->
+  <h1 class="text-center" id="random-number"></h1>
 
   <script type="text/javascript">
-    // This document.ready isn't necessary in this example... but is needed in cases where the HTML is complex.
-    // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
-    // It's useful to become familiar with now.
+
     $(document).ready(function () {
-      // VARIABLES
-      // ====================================================================
-      // Here we create variables for tracking the number of sandwiches eaten
 
-      var peanut = 0;
-      var grilled = 0;
-      var roast = 0;
-      // FUNCTIONS
-      // ====================================================================
-      // Here we create various on "click" functions which capture the clicks
-      // Inside each click event is the code to create an alert, update the counter, then show the updated count.
-      $("#pbj").on("click", function () {
-
-        alert("OMG it's PBJ day");
-        peanut++;
-        alert("you have eaten" + peanut + "PBJ Sandwitches");
-      });
+      // CREATE THE MISSING CODE HERE. Your code should add content to the random-number div.
       // ...
-      $("#grilledcheese").on("click", function () {
 
-        alert("Nam Nam Nam Grilled Chese are Awesome");
-        grilled++;
-        alert("you have eaten" + grilled + "grilledcheese Sandwitches");
-      });
-      $("#roastbeef").on("click", function () {
+      $("#random-button").on("click", function () {
 
-        alert("No Amimal rights here. Veggie shucks");
-        roast++;
-        alert("you have eaten" + roast + "ROAST BEEF Sandwitches");
+
+        var sun = Math.floor(Math.random() * 1000) + 1;
+        $("#random-number").text(sun);
       });
     });
+
   </script>
 
 </body>
